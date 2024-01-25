@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
   resources :places
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # for searching the place & showing the result in a separate page
+  get 'home/search_results', to: 'home#index', as: :search_results
 end

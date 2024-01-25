@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @places = Place.order(created_at: :desc)
+    @q = Place.ransack(params[:q])
+    @places = @q.result(distinct: true).order(created_at: :desc)
   end
 end
