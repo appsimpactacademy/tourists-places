@@ -1,0 +1,21 @@
+<div class="col-lg-12 mt-3">
+  <h1>Places in <%= @state %></h1>
+    <% @places_in_state.each do |place| %>
+      <div class="card mt-3">
+        <div class="row g-0">
+          <div class="col-lg-4">
+            <% if place.image_url.present? %>
+              <%= image_tag place.image_url, class: "img-fluid rounded-start" %>
+            <% end %>  
+          </div>
+          <div class="col-lg-8">
+            <div class="card-body">
+              <h3 class="card-title"><%= place.place_title %></h3>
+              <p class="card-text">Description or additional details about the place can go here.</p>
+              <%= link_to "View Place", place_path(place), class: "btn btn-outline-primary mb-2 mx-2" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>

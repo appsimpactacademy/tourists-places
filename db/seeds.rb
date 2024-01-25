@@ -105,6 +105,26 @@ pavagadh_temple = Place.create(
 )
 
 
+gwalior_fort = Place.create(
+  name: "Gwalior Fort",
+  state: "Madhya Pradesh",
+  city: "Gwalior",
+  latitude: 26.218287,
+  longitude: 78.182831,
+  description: "<p class='lead'>Referred to as 'the pearl amongst fortresses in India' by Mughal emperor Babur, the Gwalior Fort is one of the most impenetrable fortresses located in the entire northern and southern India and is a place you definitely must visit. Situated on the top of a vast rocky mountain near Gwalior in Madhya Pradesh in central India, this imposing structure dominates the entire city of Gwalior. An inseparable part of the identity and architecture of the city, evidence suggests that it has been around since 6th Century. It is also the places where the second oldest reference of the number 'zero' has been found in the form of a carving inside a temple on the top of the fort. The construction of the Gwalior Fort took place in two parts, in two different time periods and thus, this architectural marvel has an intriguing history attached to it. It has passed from the possession of one dynasty to the other, multiple times. The entire fort complex is well maintained and includes temples, water tanks and palaces such as Man Mandir, the Gujari, the Jahangir, the Karan, and the Shah Jahan.</p>"
+  image_url: "https://upload.wikimedia.org/wikipedia/commons/1/15/Gwalior_Fort_front.jpg"
+)
+
+mahabaleshwar = Place.create(
+  name: "Mahabaleshwar",
+  city: "Mahabaleshwar",
+  state: "Maharashtra",
+  latitude: "17.921721",
+  longitude: "73.655602",
+  description: "<p class='lead'>Mahabaleshwar is a hill station located in the Western Ghats, in Satara district of Maharashtra. Apart from its strawberries, Mahabaleshwar is also well known for its numerous rivers, magnificent cascades and majestic peaks. It is among the most sought after weekend getaways from Pune & Mumbai, located about 120km south-west of Pune and 285km from Mumbai. Mahabaleshwar is also a sacred pilgrimage place for Hindus as the Krishna river originates from here. Once a summer capital of the British, the hill station of Mahabaleshwar comprises of ancient temples, boarding schools, manicured and lush green dense forest, waterfalls, hills, valleys. It is often used as a base to visit the magnificent Pratapgad Fort, located an hour away. Malcolm Peth, Old Kshetra Mahabaleshwar and a region of the Shindola village are the three villages that make up Mahabaleshwar.</p>",
+  image_url: "https://as2.ftcdn.net/v2/jpg/01/23/63/41/1000_F_123634178_ynqjar3aiykXqjhvHwGxQcSp66ixbhCP.jpg"
+)
+
 
 
 
