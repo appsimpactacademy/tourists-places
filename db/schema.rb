@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_02_104059) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_05_105013) do
   create_table "places", force: :cascade do |t|
     t.string "name"
     t.string "state"
@@ -32,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_02_104059) do
     t.string "city"
     t.string "state"
     t.string "image_url"
-    t.integer "place_id"
+    t.integer "place_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["place_id"], name: "index_tourist_points_on_place_id"

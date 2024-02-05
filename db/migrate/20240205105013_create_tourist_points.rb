@@ -9,7 +9,7 @@ class CreateTouristPoints < ActiveRecord::Migration[7.0]
       t.string :city
       t.string :state
       t.string :image_url
-      t.references :place, foreign_key: true
+      t.references :place, null: false, foreign_key: true
 
       t.timestamps
     end
