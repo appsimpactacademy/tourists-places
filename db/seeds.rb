@@ -131,7 +131,54 @@ mahabaleshwar = Place.create(
   image_url: "https://as2.ftcdn.net/v2/jpg/01/23/63/41/1000_F_123634178_ynqjar3aiykXqjhvHwGxQcSp66ixbhCP.jpg"
 )
 
+jai_vilas_palace = TouristPoint.create(
+  name: "Jai Vilas Palace",
+  city: "Gwalior",
+  state: "Madhya Pradesh",
+  description: "<p class='lead'>Jai Vilas Mahal is a fine example of European architecture. It was designed and built by Lt. Col. Sir Michael Filose (1832-1925),[2] the Chief Secretary and Director of Public Instruction of Gwalior.[3] The palace is a combination of the architectural style of the Mughals and the Medici. It is a combination of architectural styles, the first storey is Tuscan, the second Italian-Doric and the third Corinthian. The area of the Palace is 124,771 square feet and it is known for its large Durbar Hall. The interior of the Durbar Hall is decorated with gilt and gold furnishings and adorned with a huge carpet and gigantic chandeliers. It is 30 metres (100 ft) long, 15 metres (50 ft) wide and 12 metres (41 ft) in height. The palace was described by Sir William Howard Russell in 1877. The Palace covers an area of 124,771 square feet, exclusive of the inner square, which is 321 by 321% feet. The building is double-storied, and the wings and turrets are three- and five-storied. Its total length is 106 feet. The first story is Tuscan, second Italian Doric, and the third Corinthian order of architecture. The interior of the Reception-room is 97 feet 8 inches long by 50 feet broad, and it is 41 feet in height. The roof is arched with stone slabs 21 feet long, which enabled the architect to make the ribs prominent. They rest at each end on double Corinthian columns, which form a colonnade round the interior. The interior and exterior of the Palace form a combination of arcades and colonnades. Upwards of 300,000 leaves of gold were‘used to decorate the Reception-hall. The Grand Staircase-room is roofed with stone slabs 30 feet long; the room opposite to it is roofed in the same way. This room was used for dancing. The length of each of these rooms is 50 feet. The Grand Drawing-room, one of the finest saloons in the world, is hung with wonderful chandeliers, and decorated with enormous mirrors. The Prince's bedstead, washing service, and bath were of solid silver. The cost of the Palace was a little above 1,100,000 rupees. But the garden-walls, iron railings, gardens, furniture, glass, grand staircase, chandeliers, etc, cost about 500,000 rupees more. The area of the garden is about one square mile; there are several waterfalls and a number of fountains in it. A large room preserves the desk and photographs of Madhavrao Scindia, who served as the Railway Minister of India. Many of the rooms, including drawing rooms, bedrooms and bathrooms, have been preserved just as they were lavishly decorated for the royal family.[5] The royal kitchen, with its furnaces, pots, china and other items have also been preserved. Supposedly, eight elephants were suspended from the durbar (royal court) hall ceiling to check it could cope with two 12.5 metres (41 ft)-high, 3.5-tonne chandeliers with 250 light bulbs, said to be the largest pair in the world. Unusual items fill many rooms: cut glass furniture, stuffed tigers and a ladies-only swimming pool with its own boat. The cavernous dining room displays the pièce de résistance, a model silver train that carried after-dinner brandy and cigars around the table.[6][7] In contrast to the western style dining room, a completely Indian style dining room is also preserved, which was used when the Maratha nobles were invited. The museum preserves the memory of the humble origin of Scindia (spelled in Hindi/Marathi Shinde) from the Kanherkhed village in Maharashtra. The family left its ancestral village in 1726, however it has continued to preserve its Maratha heritage. On special occasions, the Scindia family members still wear the Maratha style (Shineshahi pagdi) turban which uses 60 metres (200 ft) of Chanderi silk, with pointed ends. An exhibit at the museum explains the intricate steps involved in wrapping the special turban.</p>",
+  image_url: "https://en.wikipedia.org/wiki/Jai_Vilas_Mahal#/media/File:Jai_Vilas_Palace_(_Scindia_Palace).jpg",
+  latitude: 26.204818874547673,
+  longitude: 78.17224395013086,
+  distance_from: '4.2 Km',
+  place: gwalior_fort
+)
 
+sahastrabahu_temple = TouristPoint.create(
+  name: "Sahastrabahu temple",
+  city: "Gwalior",
+  state: "Madhya Pradesh",
+  description: "<p class='lead'>Sasbahu Temple, also called the Sas-Bahu Mandir, Sas-Bahu Temples, Sahasrabahu Temple or Harisadanam temple, is an 11th-century twin temple in Gwalior, Madhya Pradesh, India.[2][3] Near the Gwalior Fort and dedicated to Vishnu in his Padmanabha form, like most Hindu and Jain temples in this region, it is mostly in ruins and was badly damaged from numerous invasions and Hindu-Muslim wars in the region.[4] It was built in 1093 by King Mahipala of the Kachchhapaghata dynasty, according to an inscription found in the larger of the twin temple. The twin temples are situated in the Gwalior Fort.[4][2]. The temple's tower and sanctum has been destroyed, but its architecture and damaged carvings can still be appreciated from the ruins. The jagati platform is 100 feet (30 m) long and 63 feet (19 m) wide, on a square plan.[2] The temple was three-storeyed, which was one of its distinguishing features and sophistication. It followed a central cluster concept, states Adam Hardy.[5] The surviving elements of the temple are the entrance porch and the mandapa.[2] According to James Harle, though the prasada (tower, spire) no longer exists, the triple storey plan with a cruciform foundation and balconies suggests that it had a North Indian Bhumija style architecture. This style, states Harle, is marked by a well proportioned superstructure, its regularly arranged little subordinate sikharas strung out like gigantic beaded garlands.</p>",
+  image_url: "https://lh3.googleusercontent.com/p/AF1QipOkxfCaEp_-A_F3GV9Nmn8zII2z1wSXFonavBDc=s680-w680-h510",
+  latitude: 26.22451825995231,
+  longitude: 78.17175643698388,
+  distance_from: '4.2 Km',
+  place: gwalior_fort
+)
+
+
+gurudwara_data_bandi_chhor_sahib = TouristPoint.create(
+  name: "Gurudwara Data Bandi Chhor Sahib",
+  city: "Gwalior",
+  state: "Madhya Pradesh",
+  description: "<p class='lead'>Gurudwara Data Bandi Chhod is associated with Guru Har Gobind Saheb, his imprisonment in the Gwalior Fort and his release along with the 52 kings who were held captive. The Gurudwara has immense religious importance and is visited by the followers to pay homage to the great man.</p>",
+  image_url: "https://lh3.googleusercontent.com/p/AF1QipNqSSSa5aST2xDcuDfN3fkxk1-MKFprpHtF2E_8=s680-w680-h510",
+  latitude: 26.221227782194333,
+  longitude: 78.16937285177742,
+  distance_from: '4.6 Km',
+  place: gwalior_fort
+)
   
+champaner_pavagadh = TouristPoint.create(
+  name: "The Champaner-Pavagadh Archaeological Park",
+  city: "Panchmahal, Halol",
+  state: "Gujarat",
+  description: "<p class='lead'>Champaner-Pavagadh Archaeological Park, a UNESCO World Heritage Site, is located in Panchmahal district in Gujarat, India. It is located around the historical city of Champaner, a city which was founded by Vanraj Chavda, the most prominent king of the Chavda Dynasty, in the eighth century. He named it after the name of his friend and general Champa, also known later as Champaraj. The heritage site is studded with forts with bastions starting from the hills of Pavagadh, and extending into the city of Champaner. The park's landscape includes archaeological, historic and living cultural heritage monuments such as chalcolithic sites, a hill fortress of an early Hindu capital, and remains of the 16th-century capital of the state of Gujarat. There are palaces, entrance gates and arches, mosques, tombs and temples, residential complexes, agricultural structures and water installations such as stepwells and tanks, dating from the eighth to the 14th centuries. The Kalika Mata Temple, located on top of the 800 metres (2,600 ft) high Pavagadh Hill, is an important Hindu shrine in the region, attracting large numbers of pilgrims throughout the year.[1][2][3]. The transition between Hindu and Muslim culture and architecture in the late 15th to early 16th century is documented in the park, particularly the early Islamic and pre-Mughal city that has remained without any change.[4] It was inscribed by UNESCO as a World Heritage Site in 2004.[5]</p>",
+  image_url: "https://lh3.googleusercontent.com/p/AF1QipMWsCwcetUVxBI4RBg24uGCTjzcroxBpsxjl3So=s680-w680-h510",
+  latitude: 22.48533855239477,
+  longitude: 73.53391173698387,
+  distance_from: '6.0 Km',
+  place: pavagadh_temple
+) 
+
 
 

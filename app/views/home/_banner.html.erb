@@ -1,3 +1,4 @@
+<!-- Carousel wrapper -->
 <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel" data-mdb-carousel-init>
   <!-- Indicators -->
   <%# <div class="carousel-indicators">
@@ -64,42 +65,4 @@
     <span class="visually-hidden">Next</span>
   </button> %>
 </div>
-<section class="destinations-one">
-  <div class="container">
-    <div class="section-title text-center">
-      <span class="section-title__tagline">Destination lists</span>
-      <h2 class="section-title__title">Go Exotic Places</h2>
-    </div>
-    <div class="masonary-layout row">
-      <% if @places.present? %>
-        <% @places.each do |place| %>
-        <div class="col-xl-6 col-lg-6">
-          <div class="destinations-one__single">
-            <div class="destinations-one__img">
-              <% if place.image_url.present? %>
-                <%= image_tag place.image_url, class: "img-fluid rounded", style: 'max-height: 300px;' %>
-              <% end %>
-              <div class="destinations-one__content">
-                <h2 class="destinations-one__title">
-                  <%= link_to place_path(place) do %>
-                    <%= place.name %>
-                  <% end %>
-                </h2>
-              </div>
-              <div class="destinations-one__button">
-                <%= link_to "View", place_path(place) %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      <% else %>
-        <h3 class="text-center text-danger border">No Place Found.</h3>
-      <% end %>  
-    </div>
-  </div>
-</section>
-<%#= render 'home/destination' %>
-<%#= render 'home/about_one' %>
-<%#= render 'home/why_choose' %>
-
+<!-- Carousel wrapper -->

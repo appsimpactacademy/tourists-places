@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_30_115931) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_02_104059) do
   create_table "places", force: :cascade do |t|
     t.string "name"
     t.string "state"
@@ -23,4 +23,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_30_115931) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tourist_points", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "distance_from"
+    t.string "city"
+    t.string "state"
+    t.string "image_url"
+    t.integer "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_tourist_points_on_place_id"
+  end
+
+  add_foreign_key "tourist_points", "places"
 end

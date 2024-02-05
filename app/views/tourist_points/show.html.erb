@@ -1,0 +1,77 @@
+<section class="main-slider tour-details-slider">
+  <div class="swiper swiper-fade swiper-initialized swiper-horizontal swiper-pointer-events thm-swiper__slider swiper-backface-hidden">
+    <div class="swiper-wrapper" style="transition-duration: 0ms;"></div>
+    <div class="swiper-wrapper" style="transition-duration: 0ms;">
+      <div class="swiper-slide swiper-slide-next" style="width: 1831px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+        <div class="image-layer" style="background-image: url('<%= @tourist_point.image_url %>');"></div>
+        <div class="container">
+          <div class="swiper-slide-inner">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tour-details">
+  <div class="tour-details__top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6">
+          <h2><%= @tourist_point.name %></h2>
+        </div>
+        <div class="col-xl-6 text-end">
+          <p>Location</p>
+          <h6><i class="fa-solid fa-location-dot"></i> <%= @tourist_point.city %></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tour-details__bottom border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="tour-details__bottom-inner">
+            <div class="tour-details__bottom-left">
+              <ul class="list-unstyled tour-details__bottom-list">
+                <li>
+                  <div class="icon">
+                    <span class="icon-clock"></span>
+                  </div>
+                  <div class="text mt-3">
+                    <p><i class="fa-regular fa-clock"></i> Posted on <%= time_ago_in_words(@tourist_point.created_at) %> ago</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tour-details-two">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-8 col-lg-7">
+        <div class="tour-details-two__left">
+          <div class="tour-details-two__overview">
+            <h3 class="tour-details-two__title">Overview</h3>
+            <p class="lead tour-details-two__overview-text"><%= @tourist_point.description.html_safe %></p>
+          </div>
+          <div class="tour-details-two__location">
+            <h3 class="tour-details-two__title">Location</h3>
+            <div>
+              <% if @tourist_point.latitude.present? && @tourist_point.longitude.present? %>
+                <iframe src="<%= @tourist_point.google_maps_embed_link(@tourist_point.latitude, @tourist_point.longitude, @tourist_point.name) %>" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <% else %>
+                <p>No location information available.</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -5,6 +5,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @tourist_points = @place.tourist_points
   end
 
   def places_in_state
