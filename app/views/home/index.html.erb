@@ -99,7 +99,14 @@
     </div>
   </div>
 </section>
-<%#= render 'home/destination' %>
-<%#= render 'home/about_one' %>
-<%#= render 'home/why_choose' %>
 
+<div class="col-lg-6 fw-bold mx-auto">
+  <ul class="list-group mt-4">
+    <% @place_counts.each do |state, count| %>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <%= link_to "#{state}", places_in_state_path(state), class: "text-decoration-none" %>
+        <span class="badge bg-primary rounded-pill"><%= count %></span>
+      </li>
+    <% end %>
+  </ul>
+</div>

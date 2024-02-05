@@ -1,0 +1,22 @@
+<div class="col-lg-12">
+  <% @places.each do |place| %>
+  <div class="card mt-3 mb-3" style="max-width: 740px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <%= image_tag place.image_url, class:"img-fluid rounded-start", style: "height: 100%;" %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <%= link_to place_path(place), style: "text-decoration:none;" do %>
+          <h4 class="card-title fw-bold"><%= place.name %></h4>
+          <% end %>   
+          <p class="lead card-text"><%= truncate(place.description.html_safe, length: 120 ) %></p>
+          <p class="card-text"><%#= place.city %></p>
+          <p class="card-text"><%#= place.state %></p>
+          <p class="card-text"><small class="text-muted">Posted on <%= time_ago_in_words(place.created_at) %> ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

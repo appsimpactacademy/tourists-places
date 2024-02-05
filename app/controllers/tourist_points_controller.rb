@@ -1,7 +1,7 @@
 class TouristPointsController < ApplicationController
 
 	def index
-		@tourist_points = TouristPoint.all
+		@tourist_points = TouristPoint.all.order(created_at: :desc)
 	end
 
 	def show

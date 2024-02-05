@@ -1,21 +1,24 @@
 <div class="col-lg-12 mt-3">
-  <h1 class="text-center">Places in <%= @state %></h1>
-    <% @places_in_state.each do |place| %>
-      <div class="card mt-3">
-        <div class="row g-0">
-          <div class="col-lg-4">
-            <% if place.image_url.present? %>
-              <%= image_tag place.image_url, class: "img-fluid rounded-start" %>
-            <% end %>  
-          </div>
-          <div class="col-lg-8">
-            <div class="card-body">
-              <h3 class="card-title"><%= place.place_title %></h3>
-              <p class="card-text">Description or additional details about the place can go here.</p>
-              <%= link_to "View Place", place_path(place), class: "btn btn-outline-primary mb-2 mx-2" %>
-            </div>
-          </div>
+  <h1 class="fw-bold">Places in <%= @state %></h1>
+  <% @places_in_state.each do |place| %>
+  <div class="card mt-3 mb-3" style="max-width: 740px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <% if place.image_url.present? %>
+              <%= image_tag place.image_url, class: "img-fluid rounded-start", style: "height: 100%;" %>
+            <% end %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <%= link_to place_path(place), style: "text-decoration:none;" do %>
+          <h4 class="card-title fw-bold"><%= place.name %></h4>
+          <% end %>   
+          <p class="lead card-text">Description or additional details about the place can go here.</p>
+          <p class="card-text"><%= place.city %></p>
+          <p class="card-text"><%= place.state %></p>
         </div>
       </div>
-    <% end %>
+    </div>
+  </div>
+  <% end %>
 </div>
