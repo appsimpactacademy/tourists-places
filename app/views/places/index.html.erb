@@ -10,7 +10,7 @@
           <%= link_to place_path(place), style: "text-decoration:none;" do %>
           <h4 class="card-title fw-bold"><%= place.name %></h4>
           <% end %>   
-          <p class="lead card-text"><%= truncate(place.description.html_safe, length: 120 ) %></p>
+          <p class="lead card-text"><%= truncate(strip_tags(place.description), length: 120) %></p>
           <p class="card-text"><%#= place.city %></p>
           <p class="card-text"><%#= place.state %></p>
           <p class="card-text"><small class="text-muted">Posted on <%= time_ago_in_words(place.created_at) %> ago</small></p>

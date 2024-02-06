@@ -1,68 +1,23 @@
-<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel" data-mdb-carousel-init>
-  <!-- Indicators -->
-  <%# <div class="carousel-indicators">
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="0"
-      class="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="2"
-      aria-label="Slide 3"
-    ></button>
-  </div> %>
-
-  <!-- Inner -->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <!-- Single item -->
     <div class="carousel-item active">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100" alt="Sunset Over the City"/>
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
+      <img src="https://cdn.pixabay.com/photo/2018/03/11/19/04/desert-3217765_1280.jpg" class="d-block w-100" alt="...">
     </div>
-
-    <!-- Single item -->
     <div class="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100" alt="Canyon at Nigh"/>
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
+      <img src="https://cdn.pixabay.com/photo/2018/03/11/19/04/desert-3217765_1280.jpg" class="d-block w-100" alt="...">
     </div>
-
-    <!-- Single item -->
     <div class="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100" alt="Cliff Above a Stormy Sea"/>
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
+      <img src="https://cdn.pixabay.com/photo/2018/03/11/19/04/desert-3217765_1280.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
-  <!-- Inner -->
-
-  <!-- Controls -->
- <%#  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
-  </button> %>
+  </button>
 </div>
 <section class="destinations-one">
   <div class="container">
@@ -100,13 +55,4 @@
   </div>
 </section>
 
-<div class="col-lg-6 fw-bold mx-auto">
-  <ul class="list-group mt-4">
-    <% @place_counts.each do |state, count| %>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <%= link_to "#{state}", places_in_state_path(state), class: "text-decoration-none" %>
-        <span class="badge bg-primary rounded-pill"><%= count %></span>
-      </li>
-    <% end %>
-  </ul>
-</div>
+
