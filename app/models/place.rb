@@ -6,6 +6,8 @@ class Place < ApplicationRecord
   validates :description, :latitude, :longitude, :state, presence: true 
   validates :image_url, presence: true
 
+  has_many :accommodations
+
   def place_title
     "#{name}, #{city}(#{state})"
   end
