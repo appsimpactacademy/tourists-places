@@ -96,65 +96,43 @@
   </div>
 </section>
 
-<section class="tour-details-two">
+<section class="gallery">
   <div class="container">
-    <div class="row">
-      <div class="col-xl-10 col-lg-10">
-        <div class="tour-details-two__left">
-          <div class="tour-details-two__location">
-            <% more_places = Place.where(city: @place.city).where.not(id: @place.id) %>
-              <% if more_places.any? %>
-                <h3 class="tour-details-two__title">More Places in <%= @place.city %></h3>
-                <div class="row">
-                  <% more_places.each do |place| %>
-                    <div class="card mx-2" style="width: 20rem;">
-                      <% if place.image_url.present? %>
-                        <%= image_tag place.image_url, class: 'text-center mt-3', style: "height: 220px;" %>
-                      <% end %> 
-                      <div class="card-body">
-                        <h5 class="card-title fw-bold"><%= link_to place.name, place, class: "text-decoration-none" %></h5>
-                        <p class="card-text"><%= truncate(strip_tags(place.description), length: 120) %></p>
-                        <%= link_to 'View', place_path(place), class: "btn btn-primary" %>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
+    <% if @place.images.present? %>
+      <h3 class="tour-details-two__title">Gallery</h3>
+      <div class="row">
+        <% @place.images.each do |image| %>
+          <div class="col-md-4 mb-4">
+            <a href="<%= rails_blob_path(image) %>" class="place_images" data-turbolinks="false" data-mfp-title="<%= @place.name %>">
+              <%= image_tag image, class: "img-fluid rounded gallery-image" %>
+            </a>
           </div>
-        </div>
+        <% end %>
       </div>
-    </div>
+    <% end %>  
   </div>
 </section>
 
-<section class="tour-details-two">
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-10 col-lg-10">
-        <div class="tour-details-two__left">
-          <div class="tour-details-two__location">
-            <% if @place.accommodations.any? %>
-              <h3 class="tour-details-two__title">Accommodation in <%= @place.city %></h3>
-              <div class="row">
-                <% @place.accommodations.each do |accommodation| %>
-                  <div class="card mx-2" style="width: 20rem;">
-                    <% if accommodation.image_url.present? %>
-                      <%= image_tag accommodation.image_url, class: 'text-center mt-3', style: "height: 220px;" %>
-                    <% end %> 
-                    <div class="card-body">
-                      <h5 class="card-title fw-bold"><%= accommodation.name %></h5>
-                      <p class="card-text"><%= truncate(strip_tags(accommodation.description), length: 120) %></p>
-                      <%= link_to 'View', accommodation_path(accommodation), class: "btn btn-primary" %>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<%= render 'places/more_places' %>
+<%= render 'places/accommodation' %>
+
+
+<script>
+  $(document).ready(function() {
+    $('.place_images').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true
+      },
+      mainClass: 'mfp-with-zoom',
+      zoom: {
+        enabled: true,
+        duration: 300,
+        easing: 'ease-in-out'
+      }
+    });
+  });
+</script>
+
 
 

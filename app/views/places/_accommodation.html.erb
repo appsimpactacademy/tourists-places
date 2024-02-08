@@ -1,0 +1,29 @@
+<section class="tour-details-two">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-10 col-lg-10">
+        <div class="tour-details-two__left">
+          <div class="tour-details-two__location">
+            <% if @place.accommodations.any? %>
+              <h3 class="tour-details-two__title">Accommodation in <%= @place.city %></h3>
+              <div class="row">
+                <% @place.accommodations.each do |accommodation| %>
+                  <div class="card mx-2" style="width: 20rem;">
+                    <% if accommodation.image_url.present? %>
+                      <%= image_tag accommodation.image_url, class: 'text-center mt-3', style: "height: 220px;" %>
+                    <% end %> 
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold"><%= accommodation.name %></h5>
+                      <p class="card-text"><%= truncate(strip_tags(accommodation.description), length: 120) %></p>
+                      <%= link_to 'View', accommodation_path(accommodation), class: "btn btn-primary" %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

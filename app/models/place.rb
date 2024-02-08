@@ -8,6 +8,8 @@ class Place < ApplicationRecord
 
   has_many :accommodations
 
+  has_many_attached :images
+
   def place_title
     "#{name}, #{city}(#{state})"
   end
