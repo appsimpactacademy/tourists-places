@@ -4,13 +4,13 @@
       <div class="col-xl-10 col-lg-10">
         <div class="tour-details-two__left">
           <div class="tour-details-two__location">
-            <% if @place.accommodations.any? %>
+            <% if @accommodations.any? %>
               <h3 class="tour-details-two__title">Accommodation in <%= @place.city %></h3>
               <div class="row">
-                <% @place.accommodations.each do |accommodation| %>
+                <% @accommodations.each do |accommodation| %>
                   <div class="card mx-2" style="width: 20rem;">
-                    <% if accommodation.image_url.present? %>
-                      <%= image_tag accommodation.image_url, class: 'text-center mt-3', style: "height: 220px;" %>
+                    <% if accommodation.images.attached? %>
+                      <%= image_tag url_for(accommodation.images.first), class: 'text-center mt-3', style: "height: 220px;" %>
                     <% end %> 
                     <div class="card-body">
                       <h5 class="card-title fw-bold"><%= accommodation.name %></h5>

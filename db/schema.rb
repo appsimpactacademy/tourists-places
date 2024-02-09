@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_08_090539) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_09_113928) do
   create_table "accommodations", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -19,7 +19,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_08_090539) do
     t.string "contact_number"
     t.string "city"
     t.string "state"
-    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "place_id"
@@ -61,9 +60,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_08_090539) do
     t.float "latitude"
     t.float "longitude"
     t.text "description"
-    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
   end
 
   add_foreign_key "accommodations", "places"

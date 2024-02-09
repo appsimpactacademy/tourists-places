@@ -10,8 +10,8 @@
                 <div class="row">
                   <% more_places.each do |place| %>
                     <div class="card mx-2" style="width: 20rem;">
-                      <% if place.image_url.present? %>
-                        <%= image_tag place.image_url, class: 'text-center mt-3', style: "height: 220px;" %>
+                      <% if place.images.attached? %>
+                        <%= image_tag url_for(place.images.last), class: 'text-center mt-3', style: "height: 220px;" %>
                       <% end %> 
                       <div class="card-body">
                         <h5 class="card-title fw-bold"><%= link_to place.name, place, class: "text-decoration-none" %></h5>

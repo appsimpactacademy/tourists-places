@@ -25,6 +25,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @accommodations = Accommodation.where(city: @place.city)
   end
 
   def update
@@ -57,6 +58,6 @@ class PlacesController < ApplicationController
   end
 
   def place_params
-    params.require(:place).permit(:name, :city, :state, :description, :latitude, :longitude, images: [])
+    params.require(:place).permit(:name, :city, :state, :description, :latitude, :longitude, :image_url, images: [])
   end
 end

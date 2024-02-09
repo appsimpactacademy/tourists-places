@@ -199,8 +199,7 @@ rajwada_palace = Place.create(
   latitude: "22.71939195365203",
   longitude: "75.8573844284894",
   description: "Rajwada, also known as the Holkar Palace or Old Palace, is an important historical palace in Indore that was constructed by the Holkars of the Maratha empire, around 2 centuries ago. An example of the fine architectural skill and magnificence of those times, the palace is an impressive 7 storey structure that is placed near the Holkar Chhatris. One of the popular tourist attractions of Indore, Rajwada Palace is one of the oldest structures too. The construction of the palace was started by Malhar Rao Holkar, the founder of Holkar Dynasty in the year 1747 A.D. This remarkable structure is placed in Khajuri Bazaar, right in the middle of the city. The Rajwada palace has the Shiv Vilas Palace on the right (New Palace) and faces a well-maintained garden that has a statue of Maharani Ahilya Bai Holkar, fountains and an artificial waterfall.[1]",
-  image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Indore_Rajwada01.jpg/1920px-Indore_Rajwada01.jpg",
-    "https://lh3.googleusercontent.com/p/AF1QipOeOGWEauqZY9Owf5tibuBSsgiTie7wXkCb5qSb=s680-w680-h510"
+  image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Indore_Rajwada01.jpg/1920px-Indore_Rajwada01.jpg"
 )
 
 gandhi_hall = Place.create(

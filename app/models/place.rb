@@ -4,7 +4,7 @@ require 'cgi'
 class Place < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :description, :latitude, :longitude, :state, presence: true 
-  validates :image_url, presence: true
+  # validates :image_url, presence: true
 
   has_many :accommodations
 

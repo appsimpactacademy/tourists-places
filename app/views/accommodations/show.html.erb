@@ -2,21 +2,13 @@
 	<h2 class="text-red lg:text-2xl xl:text-3xl mt-3 mb-3 "><%= @accommodation.name %>, <%= @accommodation.city %></h2>
 	<div class="w-100 d-flex flex-column flex-lg-row">
 		<div class="col-lg-6 grid grid-cols-2 grid-rows-3 gap-2 lg:grid-cols-3 lg:grid-rows-2">
-			<div class="col-span-2 row-span-1 lg:col-span-1 lg:row-span-2">
-				<img class="w-100 h-100 object-cover rounded-lg" src="https://d3b9bso2h5gryf.cloudfront.net/mp-cms-images/3705769672.png">
-			</div>
-			<div class="col-span-1 row-span-1 lg:col-span-1 lg:row-span-1">
-				<img class="w-100 h-100 object-cover rounded-lg" src="https://d3b9bso2h5gryf.cloudfront.net/mp-cms-images/2006384694.png">
-			</div>
-			<div class="col-span-1 row-span-1 lg:col-span-1 lg:row-span-1">
-				<img class="w-100 h-100 object-cover rounded-lg" src="https://d3b9bso2h5gryf.cloudfront.net/mp-cms-images/348490956.png">
-			</div>
-			<div class="col-span-1 row-span-1 lg:col-span-1 lg:row-span-1">
-				<img class="w-100 h-100 object-cover rounded-lg" src="https://d3b9bso2h5gryf.cloudfront.net/mp-cms-images/2071632134.png">
-			</div>
-			<div class="col-span-1 row-span-1 lg:col-span-1 lg:row-span-1">
-				<img class="w-100 h-100 object-cover rounded-lg" src="https://d3b9bso2h5gryf.cloudfront.net/mp-cms-images/1231014691.png">
-			</div>
+			<% if @accommodation.images.present? %>
+        <% @accommodation.images.each do |image| %>
+          <a href="<%= rails_blob_path(image) %>" class="accommodation_images" data-turbolinks="false" data-mfp-title="<%= @accommodation.name %>">
+            <%= image_tag image, class: "img-fluid rounded gallery-image" %>
+          </a>
+        <% end %>
+      <% end %>
 		</div>
 		<div class="col-lg-6 d-flex flex-column mt-4 mt-lg-0 gap-2 gap-lg-4 gap-xl-8 px-4 text-gray-5">
 			<div class="text-justify overflow-auto scrolling" style="min-height: 15vh; max-height: 100vh;">
@@ -125,3 +117,20 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+    $('.accommodation_images').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true
+      },
+      mainClass: 'mfp-with-zoom',
+      zoom: {
+        enabled: true,
+        duration: 300,
+        easing: 'ease-in-out'
+      }
+    });
+  });
+</script>

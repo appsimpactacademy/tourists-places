@@ -3,7 +3,7 @@
     <div class="swiper-wrapper" style="transition-duration: 0ms;"></div>
     <div class="swiper-wrapper" style="transition-duration: 0ms;">
       <div class="swiper-slide swiper-slide-next" style="width: 1831px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-        <div class="image-layer" style="background-image: url('<%= @place.image_url %>');"></div>
+        <div class="image-layer" style="background-image: url('<%= url_for(@place.images.last) %>');"></div>
         <div class="container">
           <div class="swiper-slide-inner">
             <%# <div class="tour-details-slider_icon">

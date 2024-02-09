@@ -4,7 +4,9 @@
   <div class="card mt-3 mb-3" style="max-width: 740px;">
     <div class="row g-0">
       <div class="col-md-4">
-        <%= image_tag place.image_url, class:"img-fluid rounded-start", style: "height: 100%;" %>
+        <% if place.images.attached? %>
+          <%= image_tag url_for(place.images.first), class: "img-fluid rounded-start", style: "height: 100%;" %>
+        <% end %>
       </div>
       <div class="col-md-8">
         <div class="card-body">
