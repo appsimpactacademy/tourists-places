@@ -1,27 +1,38 @@
 <div class="col-lg-10 mx-auto">
-  <%= link_to "Add Accommodation", new_accommodation_path, class: "btn btn-primary mt-3" %>
-  <% @accommodations.each do |accommodation| %>
-  <div class="card mt-3 mb-3" style="max-width: 740px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <% if accommodation.images.attached? %>
-          <%= image_tag url_for(accommodation.images.first), class: "img-fluid rounded-start", style: "height: 100%;" %>
+  <%= render 'accommodations/price_range' %>
+
+  <% if @accommodations.any? %>
+    <% @accommodations.group_by(&:city).each do |city, accommodations| %>
+      <h2 class="text-red lg:text-2xl xl:text-3xl mt-3 mb-3"><%#= city %></h2>
+      <% if accommodations.any? %>
+        <% accommodations.each do |accommodation| %>
+          <div class="card mt-3 mb-3" style="max-width: 1040px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <% if accommodation.images.attached? %>
+                  <%= image_tag url_for(accommodation.images.first), class: "img-fluid rounded-start", style: "height: 100%;" %>
+                <% end %>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold"><%= link_to accommodation.name, accommodation, class: "text-decoration-none" %></h5>
+                  <p class="card-text"><%= truncate(accommodation.description, length: 100) %></p>
+                  <h4 class="card-text text-red lg:text-2xl xl:text-3xl mt-3 mb-3"><%= accommodation.city %></h4>
+                  <p class="card-text"> ₹ <%= accommodation.price %></p>
+                  <%= link_to 'View Details', accommodation_path(accommodation), class: "btn btn-primary" %>
+                  <%#= link_to "Edit", edit_accommodation_path(accommodation), class: "btn btn-warning" %>
+                  <%#= link_to 'Delete', accommodation_path(accommodation), data: { turbo_method: :delete, turbo_confirm: "Are You Sure?" }, class: 'btn btn-danger'  %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title fw-bold"><%= link_to accommodation.name, accommodation, class: "text-decoration-none" %></h5>
-          <p class="card-text"><%= truncate(accommodation.description, length: 100) %></p>
-          <p class="card-text"><%= accommodation.city %></p>
-          <%= link_to 'View Details', accommodation_path(accommodation), class: "btn btn-primary" %>
-          <%#= link_to "Edit", edit_accommodation_path(accommodation), class: "btn btn-warning" %>
-          <%#= link_to 'Delete', accommodation_path(accommodation), data: { turbo_method: :delete, turbo_confirm: "Are You Sure?" }, class: 'btn btn-danger'  %>
-        </div>
-      </div>
-    </div>
-  </div>
+      <% else %>
+        <p>No accommodations available for this city</p>
+      <% end %>
+    <% end %>
+  <% else %>
+    <h4 class="text-danger mt-5 text-center">No accommodations available for the selected price range</h4>
   <% end %>
+
 </div>
-
-
-

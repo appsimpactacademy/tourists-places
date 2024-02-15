@@ -14,9 +14,34 @@ class Place < ApplicationRecord
     "#{name}, #{city}(#{state})"
   end
 
-  def google_maps_embed_link(lat, long, place_name)
-    "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1811.7148585310736!2d#{long}!3d#{lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s#{CGI.escape(place_name)}!5e0!3m2!1sen!2sin!4v1706525941569!5m2!1sen!2sin"
+  def google_maps_embed_link(accommodation)
+    markers = accommodations.map { |accommodation| "#{accommodation.latitude},#{accommodation.longitude}" }
+    place_name = "Van Vihar National Park, Bhopal, Madhya Pradesh"
+    place_latitude = 23.2346
+    place_longitude = 77.3769
+    # accommodation_latitude = accommodation.latitude
+    # accommodation_longitude = accommodation.longitude
+
+    place_name_encoded = CGI.escape(place_name)
+    # accommodation_marker = "#{accommodation_latitude},#{accommodation_longitude}"
+
+    "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1811.7148585310736!2d#{place_longitude}!3d#{place_latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s#{place_name_encoded}!5e0!3m2!1sen!2sin!4v1706525941569!5m2!1sen!2sin&markers=#{markers}"
   end
+
+
+  # def google_maps_embed_link
+  #   place_name = "Van Vihar National Park, Bhopal, Madhya Pradesh"
+  #   place_latitude = 23.2346
+  #   place_longitude = 77.3769
+  #   accommodation_latitude = 23.2279
+  #   accommodation_longitude = 77.3891
+
+  #   place_name_encoded = CGI.escape(place_name)
+  #   accommodation_marker = "#{accommodation_latitude},#{accommodation_longitude}"
+
+  #   "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1811.7148585310736!2d#{place_longitude}!3d#{place_latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s#{place_name_encoded}!5e0!3m2!1sen!2sin!4v1706525941569!5m2!1sen!2sin&markers=#{accommodation_marker}"
+  # end
+
 
   def self.ransackable_attributes(auth_object = nil)
     ["city", "created_at", "description", "id", "image_url", "latitude", "longitude", "name", "state", "updated_at"]

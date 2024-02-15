@@ -212,3 +212,47 @@ gandhi_hall = Place.create(
   image_url: "https://lh3.googleusercontent.com/p/AF1QipN8Vl3RgF3zLviPvXivpIRMMZVqWoBzemeGiV-v=s680-w680-h510"
 )
 
+taj_usha_kiran_palace = Accommodation.create(
+ name: "Taj Usha Kiran Palace",
+ description: "Usha Kiran Palace is a heritage hotel set amidst 9 acres of beautifully landscaped lawns. A regal palace with a history of having hosted many a royal guest, including the King of England, it presents an interesting contrast with artistic stone carvings and delicate filigree work existing alongside ultra-modern amenities. The hotel is located in the historical district of Gwalior, and is in close proximity to a number of important landmarks. ",
+ latitude: 26.205318761520726,
+ longitude: 78.16921125122856,
+ contact_number: " 07512444000",
+ city: "Gwalior",
+ state: "Madhya Pradesh",
+ place_id: 12
+)
+
+mpt_tansen_residency = Accommodation.create(
+  name: "MPT Tansen Residency",
+  description: "Tansen Residency - MPSTDC, Gwalior, is conviniently located in the city &  offers three star level service at convinient price. It is located in close proximity to the railway station, and a number of historical spots.",
+  latitude: 26.214818846498662,
+  longitude: 78.18947795917418,
+  contact_number: "(0751) 2340370",
+  city: "Gwalior",
+  state: "Madhya Pradesh",
+  place_id: 12
+)
+
+mpt_lakeview_residency = Accommodation.create(
+ name: "MPT Lake View Residency",
+ description: "Hotel Lake View  is three star property that overlooks the splendid upper lake.\r\nExtra Info:\r\nFront Desk: 24 Hours\r\nCheck in time: 12:00 PM\r\nCheck out time:12:00 PM\r\nHouse Keeping: Daily, (included in room rates, no extra charge)\r\nMinimum Stay: No minimum Stay.\r\nBathroom: Private for each unit. ",
+ latitude: 23.24383831448218,
+ longitude: 77.38957655972304,
+ contact_number: "(0755) 2660090-93",
+ city: "Bhopal",
+ state: "Madhya Pradesh",
+ place_id: 23
+)
+
+mahinder_homestay = Accommodation.create(
+ name: "Maninder's Homestay",
+ description:
+ "It is a bungalow situated in eastern part of indore. Facing north, it is on 5000+ sq ft with 9000 constructed areas. We have four good rooms in property. Rooms are very spacious and flanked with big balconies. Colony is in the heart of city. We have tasty food available nearby, doctor, hospital, passport office and all necessary requirements are very near.",
+ latitude: 22.705091129416356,
+ longitude: 75.9218408979215,
+ contact_number: "9425311458",
+ city: "Indore",
+ state: "Madhya Pradesh",
+ place_id: 15
+ )

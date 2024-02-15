@@ -13,7 +13,7 @@
                       <%= image_tag url_for(accommodation.images.first), class: 'text-center mt-3', style: "height: 220px;" %>
                     <% end %> 
                     <div class="card-body">
-                      <h5 class="card-title fw-bold"><%= accommodation.name %></h5>
+                      <h5 class="card-title fw-bold"><%= link_to accommodation.name, accommodation, class: "text-decoration-none" %></h5>
                       <p class="card-text"><%= truncate(strip_tags(accommodation.description), length: 120) %></p>
                       <%= link_to 'View', accommodation_path(accommodation), class: "btn btn-primary" %>
                     </div>

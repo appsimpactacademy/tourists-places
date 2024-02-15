@@ -1,0 +1,28 @@
+<h3>Price Range</h3>
+<%= form_tag(accommodations_path, method: :get) do %>
+  <label>
+    <%= check_box_tag "price_range", "0-499", params[:price_range] == "0-499" %>
+    ₹0 - ₹499
+  </label><br>
+  <label>
+    <%= check_box_tag "price_range", "500-999", params[:price_range] == "500-999" %>
+    ₹500 - ₹999
+  </label><br>
+  <label>
+    <%= check_box_tag "price_range", "1000-1499", params[:price_range] == "1000-1499" %>
+    ₹1000 - ₹1499
+  </label><br>
+  <label>
+    <%= check_box_tag "price_range", "1500-1999", params[:price_range] == "1500-1999" %>
+    ₹1500 - ₹1999
+  </label><br>
+  <label>
+    <%= check_box_tag "price_range", "2000-2499", params[:price_range] == "2000-2499" %>
+    ₹2000 - ₹2499
+  </label><br>
+  <label>
+    <%= check_box_tag "price_range", "2500-2999", params[:price_range] == "2500-2999" %>
+    ₹2500 - ₹2999
+  </label><br>
+  <%= submit_tag "Filter", class: "btn btn-primary mt-2" %>
+<% end %>

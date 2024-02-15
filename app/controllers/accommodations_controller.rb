@@ -1,11 +1,16 @@
 class AccommodationsController < ApplicationController
-
   before_action :set_state_in_accommodation, only: [:index, :new, :update, :show, :edit, :destroy]
-
   before_action :set_accommodation, only: [:edit, :update, :show, :destroy]
 
   def index
     @accommodations = Accommodation.all.order(created_at: :desc)
+
+    if params[:price_range].present?
+      price_range = Array(params[:price_range]).map do |range|
+        range.split("_").map(&:to_f)
+      end
+      @accommodations = @accommodations.where(price: price_range.flatten.min..price_range.flatten.max)
+    end
   end
 
   def new
