@@ -84,10 +84,11 @@
             <h3 class="tour-details-two__title">Location</h3>
             <div>
               <% if @place.latitude.present? && @place.longitude.present? %>
-                <iframe src="<%= @place.google_maps_embed_link(@accommodations) %>" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div id="map" style="height: 400px;"></div>
               <% else %>
                 <p>No location information available.</p>
               <% end %>
+
             </div>
           </div>
         </div>
@@ -116,7 +117,6 @@
 <%= render 'places/more_places' %>
 <%= render 'places/accommodation' %>
 
-
 <script>
   $(document).ready(function() {
     $('.place_images').magnificPopup({
@@ -134,5 +134,30 @@
   });
 </script>
 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var map = L.map('map').setView([<%= @place.latitude %>, <%= @place.longitude %>], 13); // Set initial map view based on place's latitude and longitude
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Marker for place
+    L.marker([<%= @place.latitude %>, <%= @place.longitude %>]).addTo(map)
+      .bindPopup('<%= @place.place_title %>'); // Bind popup with the place's title
+
+    // Add markers for accommodations
+    <% @accommodations.each do |accommodation| %>
+      L.marker([<%= accommodation.latitude %>, <%= accommodation.longitude %>]).addTo(map)
+        .bindPopup('<%= accommodation.name %>'); // Bind popup with the accommodation's name
+    <% end %>
+
+    // Add zoom controls
+    L.control.zoom({
+      position: 'topright' // Position of the zoom control
+    }).addTo(map);
+  });
+</script>
 
 

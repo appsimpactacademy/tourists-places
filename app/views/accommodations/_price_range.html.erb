@@ -1,28 +1,40 @@
-<h3>Price Range</h3>
+<h5 class="mb-2">Price Range</h5>
 <%= form_tag(accommodations_path, method: :get) do %>
-  <label>
-    <%= check_box_tag "price_range", "0-499", params[:price_range] == "0-499" %>
-    ₹0 - ₹499
-  </label><br>
-  <label>
-    <%= check_box_tag "price_range", "500-999", params[:price_range] == "500-999" %>
-    ₹500 - ₹999
-  </label><br>
-  <label>
-    <%= check_box_tag "price_range", "1000-1499", params[:price_range] == "1000-1499" %>
-    ₹1000 - ₹1499
-  </label><br>
-  <label>
-    <%= check_box_tag "price_range", "1500-1999", params[:price_range] == "1500-1999" %>
-    ₹1500 - ₹1999
-  </label><br>
-  <label>
-    <%= check_box_tag "price_range", "2000-2499", params[:price_range] == "2000-2499" %>
-    ₹2000 - ₹2499
-  </label><br>
-  <label>
-    <%= check_box_tag "price_range", "2500-2999", params[:price_range] == "2500-2999" %>
-    ₹2500 - ₹2999
-  </label><br>
-  <%= submit_tag "Filter", class: "btn btn-primary mt-2" %>
+  <div id="price-slider" class="mb-2 mt-2"></div>
+
+    <%= text_field_tag "price_range", "", id: "price_range", readonly: true, class: 'form-control mt-2' %>
+    <%= submit_tag "Filter", class: "btn btn-primary mt-2" %>
+    <% if params[:price_range].present? %>
+      <%= link_to "Clear Filter", accommodations_path, class: "btn btn-secondary mt-2" %>
+    <% end %>
 <% end %>
+
+
+<script>
+  $(document).ready(function() {
+    $("#price-slider").slider({
+      range: true,
+      min: 0,
+      max: 5000, // Adjust the max value according to your maximum price
+      values: [0, 5000], // Initial values for min and max prices
+      slide: function(event, ui) {
+        $("#price_range").val("₹" + ui.values[0] + " - ₹" + ui.values[1]);
+      }
+    });
+    $("#price_range").val("₹" + $("#price-slider").slider("values", 0) + " - ₹" + $("#price-slider").slider("values", 1));
+  });
+</script>
+
+
+<style>
+  /* Customize the handle of the slider */
+  .ui-slider-handle {
+    background-color: #007bff; /* Change the background color */
+    border-color: #007bff; /* Change the border color */
+  }
+
+  /* Customize the range track of the slider */
+  .ui-slider-range {
+    background-color: #007bff; /* Change the color of the track */
+  }
+</style>

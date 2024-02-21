@@ -3,13 +3,11 @@ class AccommodationsController < ApplicationController
   before_action :set_accommodation, only: [:edit, :update, :show, :destroy]
 
   def index
-    @accommodations = Accommodation.all.order(created_at: :desc)
+    @accommodations = Accommodation.includes(images_attachments: :blob).order(created_at: :desc)
 
     if params[:price_range].present?
-      price_range = Array(params[:price_range]).map do |range|
-        range.split("_").map(&:to_f)
-      end
-      @accommodations = @accommodations.where(price: price_range.flatten.min..price_range.flatten.max)
+      min_price, max_price = params[:price_range].split(" - ").map { |price| price.gsub(/[^\d]/, '').to_i }
+      @accommodations = @accommodations.where(price: min_price..max_price)
     end
   end
 
